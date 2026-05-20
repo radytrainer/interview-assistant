@@ -3,7 +3,7 @@ import {
   Search, Moon, Sun, Download, RefreshCw, ChevronDown, ChevronRight, 
   Menu, X, Star, FileText, CheckCircle, BrainCircuit, Code, Bug, 
   Layers, Database, Globe, Shield, UserPlus, Trash2, Users, Edit3, Award, FileSpreadsheet,
-  Palette, CheckSquare, Server
+  Palette, CheckSquare, Server, Briefcase
 } from 'lucide-react';
 
 function useLocalStorage(key, initialValue) {
@@ -44,6 +44,7 @@ const CATEGORIES = [
   { id: 'ux_ui', name: 'UX / UI Design', icon: <Palette className="w-5 h-5" /> },
   { id: 'qa', name: 'Quality Assurance', icon: <CheckSquare className="w-5 h-5" /> },
   { id: 'dba', name: 'Database Administrator', icon: <Server className="w-5 h-5" /> },
+  { id: 'project_management', name: 'Project Management', icon: <Briefcase className="w-5 h-5" /> },
 ];
 
 const QUESTION_BANK = {
@@ -1360,6 +1361,128 @@ const QUESTION_BANK = {
       question: "What is Multi-Version Concurrency Control (MVCC)?",
       answer: "MVCC is a database optimization technique where each write operation creates a new version of the data instead of locking it. This allows read operations to run without blocking write operations, and vice versa.",
       example: "Giving readers a snapshot photocopy of the book to read while a writer is updating the pages of the main manuscript."
+    }
+  ],
+  project_management: [
+    {
+      id: 'pm1', difficulty: 'Basic',
+      question: "What is the difference between Agile and Waterfall methodologies?",
+      answer: "Waterfall is a linear, sequential design process where development flows steadily downwards through phases (Requirements, Design, Implementation, Verification, Maintenance). Agile is an iterative, incremental approach that focuses on flexibility, collaboration, and delivering small working software slices frequently.",
+      example: "Waterfall is like building a house (plan everything first, build foundation, build walls). Agile is like building a car where you start with a skateboard, then a bicycle, then a motorcycle, getting feedback at each stage."
+    },
+    {
+      id: 'pm2', difficulty: 'Basic',
+      question: "What is the role of a Scrum Master?",
+      answer: "A Scrum Master is a servant-leader responsible for promoting and supporting Scrum. They help the team by removing blockers, facilitating Scrum ceremonies, and shielding the team from external distractions to ensure they can focus on delivering the sprint goal.",
+      example: "A Scrum Master helping a developer by talking to another team to unblock a broken API integration that is delaying the sprint."
+    },
+    {
+      id: 'pm3', difficulty: 'Basic',
+      question: "What is a 'Sprint' in Scrum, and how long does it typically last?",
+      answer: "A Sprint is a repeatable, fixed time-box (usually 1 to 4 weeks, with 2 weeks being the most common) during which a 'Done', useable, and potentially releasable product increment is created.",
+      example: "A team committing to a 2-week Sprint to build and deliver the 'user password reset' and 'profile edit' features."
+    },
+    {
+      id: 'pm4', difficulty: 'Basic',
+      question: "What are the four core ceremonies/meetings in Scrum?",
+      answer: "The four core Scrum ceremonies are: 1. Sprint Planning (defining what to build and how). 2. Daily Scrum / Standup (daily 15-minute sync on progress and blockers). 3. Sprint Review (demoing the working increment to stakeholders). 4. Sprint Retrospective (reflecting on how to improve team processes).",
+      example: "Holding a 15-minute standup every morning where team members answer: What did I do yesterday? What will I do today? Are there any blockers?"
+    },
+    {
+      id: 'pm5', difficulty: 'Basic',
+      question: "What is the difference between a Product Backlog and a Sprint Backlog?",
+      answer: "The Product Backlog is an ordered, master list of everything that might be needed in the product, owned and prioritized by the Product Owner. The Sprint Backlog is a subset of items selected from the Product Backlog for the current Sprint, plus a plan for delivering them.",
+      example: "Product Backlog has 150 features requested over the next year. Sprint Backlog has the 5 features the developers agreed to build in the current 2-week sprint."
+    },
+    {
+      id: 'pm6', difficulty: 'Basic',
+      question: "What is a Gantt Chart and how is it used?",
+      answer: "A Gantt Chart is a visual project management tool that displays tasks, schedules, and dependencies along a timeline. It shows start and end dates of tasks, who is responsible, and how tasks overlap.",
+      example: "A chart showing that the 'Database Design' task must finish on June 5th before the 'Backend API Coding' task can start on June 6th."
+    },
+    {
+      id: 'pm7', difficulty: 'Intermediate',
+      question: "What is the 'Triple Constraint' (Project Management Triangle)?",
+      answer: "The Triple Constraint states that every project is constrained by three factors: Scope (what to do), Time (how long it takes), and Cost/Resources (how much it costs). Adjusting one constraint will inevitably affect the other two.",
+      example: "If the client suddenly wants to add 5 new features (increasing Scope), the project will either take longer (Time) or require hiring more developers (Cost)."
+    },
+    {
+      id: 'pm8', difficulty: 'Intermediate',
+      question: "What is the difference between a Product Manager and a Project Manager?",
+      answer: "A Product Manager focuses on the 'What' and the 'Why' (defining the product vision, strategy, customer needs, and features). A Project Manager focuses on the 'How' and the 'When' (planning timelines, managing resources, removing risks, and executing to deliver on time).",
+      example: "Product Manager: 'We need to build a payment feature because 40% of users drop out at checkout.' Project Manager: 'To build this payment feature by Q3, we need 3 devs, and we will track progress using Jira sprints.'"
+    },
+    {
+      id: 'pm9', difficulty: 'Intermediate',
+      question: "What are Story Points and how are they used in estimation?",
+      answer: "Story Points are a unit of measure used in Agile to estimate the overall effort required to implement a user story. They represent a combination of complexity, effort, and risk, usually using a Fibonacci sequence (1, 2, 3, 5, 8, 13) to avoid false precision.",
+      example: "Assigning 1 point to a simple text change on a button, 5 points to building a simple form, and 13 points to integrating a new third-party payment gateway."
+    },
+    {
+      id: 'pm10', difficulty: 'Intermediate',
+      question: "What is 'Scope Creep' and how can a project manager prevent it?",
+      answer: "Scope Creep refers to the uncontrolled growth of a project's scope without adjustments to time, cost, and resources. It can be prevented by establishing a clear scope definition early, implementing a formal change control process, and learning to say 'no' or deferring requests to future phases.",
+      example: "Preventing a client from adding a live-chat feature into a simple contact-us form project by scheduling it as a phase-2 enhancement."
+    },
+    {
+      id: 'pm11', difficulty: 'Intermediate',
+      question: "What is a Burndown Chart and how do you read it?",
+      answer: "A Burndown Chart is a visual representation of work left to do versus time. The vertical axis shows remaining effort (often in story points or hours) and the horizontal axis shows time. A diagonal line represents the ideal rate of completion, and the actual line shows real-time progress.",
+      example: "If the actual line is above the ideal line on day 6 of a sprint, it means the team is behind schedule and might not finish all committed tasks."
+    },
+    {
+      id: 'pm12', difficulty: 'Intermediate',
+      question: "Explain what 'Critical Path Method' (CPM) is.",
+      answer: "CPM is a step-by-step project management technique to identify the sequence of dependent tasks that determines the shortest possible time to complete a project. Any delay in a task on the critical path will directly delay the project's completion date.",
+      example: "If designing the database takes 4 days, coding takes 10 days, and testing takes 3 days, these are sequentially dependent and form the critical path of 17 days."
+    },
+    {
+      id: 'pm13', difficulty: 'Intermediate',
+      question: "What is the difference between Scrum and Kanban?",
+      answer: "Scrum is highly structured, relying on fixed-length sprints, defined roles (Product Owner, Scrum Master, Developers), and specific ceremonies. Kanban is continuous and flexible, focusing on visualizing work on a board, limiting Work in Progress (WIP), and optimizing flow without fixed timelines.",
+      example: "Scrum team plans 5 tasks for a 2-week block. Kanban team pulls tasks from a column one-by-one as soon as a slot opens up under their WIP limit."
+    },
+    {
+      id: 'pm14', difficulty: 'Advanced',
+      question: "What is risk management, and what are the main strategies for handling risk?",
+      answer: "Risk management is the process of identifying, analyzing, and responding to potential project risks. The four main strategies are: 1. Avoid (eliminate the threat). 2. Mitigate (reduce impact/likelihood). 3. Transfer (shift risk to third party, like insurance). 4. Accept (acknowledge the risk and prepare a contingency).",
+      example: "Mitigating the risk of server downtime by setting up a backup server (redundancy) before launching a high-traffic campaign."
+    },
+    {
+      id: 'pm15', difficulty: 'Advanced',
+      question: "What is the difference between velocity and capacity in Agile?",
+      answer: "Velocity is the average amount of work (in story points) a team completes in a typical sprint, based on historical data. Capacity is the maximum amount of work the team can realistically commit to in a *specific* upcoming sprint, accounting for holidays, vacations, or meetings.",
+      example: "A team's average velocity is 40 points, but their capacity for next sprint is only 30 points because two developers are going on vacation."
+    },
+    {
+      id: 'pm16', difficulty: 'Advanced',
+      question: "What is a RACI Matrix and how is it used?",
+      answer: "A RACI Matrix is a responsibility assignment chart used to define roles for project tasks. RACI stands for: R - Responsible (does the work), A - Accountable (final decision maker/owner), C - Consulted (provides input/feedback), I - Informed (updated on progress).",
+      example: "In a login feature task: Developer is Responsible (R), Project Lead is Accountable (A), Security Expert is Consulted (C), and Marketing team is Informed (I)."
+    },
+    {
+      id: 'pm17', difficulty: 'Advanced',
+      question: "What is Brooks' Law and how does it affect software project planning?",
+      answer: "Brooks' Law is the observation that 'adding human resources to a late software project makes it later.' This happens because new team members require training/ramp-up time from existing members, and communication overhead increases exponentially.",
+      example: "Instead of adding 3 new developers to finish a late API project due in 2 weeks, a project manager should reduce scope or adjust the deadline."
+    },
+    {
+      id: 'pm18', difficulty: 'Advanced',
+      question: "What is a 'Post-Mortem' or 'Retrospective' meeting, and what is its goal?",
+      answer: "A Retrospective is a meeting held at the end of a project phase or sprint where team members discuss what went well, what went poorly, and what can be improved. The goal is continuous improvement, creating actionable tasks to optimize future work.",
+      example: "Discussing why deployment failed on Friday night, and agreeing to automate production tests in the next sprint to prevent it."
+    },
+    {
+      id: 'pm19', difficulty: 'Basic',
+      question: "What is the definition of a project 'Milestone'?",
+      answer: "A Milestone is a significant checkpoint or event in a project timeline that marks a major achievement, phase completion, or key decision point. It has zero duration because it represents a point in time, not a task.",
+      example: "Reaching the 'Beta Version Launch' or 'Client Approval of Wireframes' milestones in a web development project."
+    },
+    {
+      id: 'pm20', difficulty: 'Advanced',
+      question: "Explain the difference between Capex and Opex in project budgeting.",
+      answer: "Capex (Capital Expenditure) refers to funds used to acquire, upgrade, and maintain physical or long-term assets (like buying servers or patenting software). Opex (Operating Expenditure) refers to the day-to-day operational costs of running a project or business (like server subscriptions, cloud hosting, or team salaries).",
+      example: "Buying 10 physical rack servers is Capex. Renting 10 Amazon Web Services (AWS) EC2 instances on a monthly subscription is Opex."
     }
   ]
 };
