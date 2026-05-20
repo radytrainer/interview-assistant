@@ -2,7 +2,8 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { 
   Search, Moon, Sun, Download, RefreshCw, ChevronDown, ChevronRight, 
   Menu, X, Star, FileText, CheckCircle, BrainCircuit, Code, Bug, 
-  Layers, Database, Globe, Shield, UserPlus, Trash2, Users, Edit3, Award, FileSpreadsheet
+  Layers, Database, Globe, Shield, UserPlus, Trash2, Users, Edit3, Award, FileSpreadsheet,
+  Palette, CheckSquare, Server
 } from 'lucide-react';
 
 function useLocalStorage(key, initialValue) {
@@ -40,6 +41,9 @@ const CATEGORIES = [
   { id: 'database', name: 'Database / SQL', icon: <Database className="w-5 h-5" /> },
   { id: 'api_backend', name: 'API / Backend', icon: <Globe className="w-5 h-5" /> },
   { id: 'security', name: 'Web Security Concepts', icon: <Shield className="w-5 h-5" /> },
+  { id: 'ux_ui', name: 'UX / UI Design', icon: <Palette className="w-5 h-5" /> },
+  { id: 'qa', name: 'Quality Assurance', icon: <CheckSquare className="w-5 h-5" /> },
+  { id: 'dba', name: 'Database Administrator', icon: <Server className="w-5 h-5" /> },
 ];
 
 const QUESTION_BANK = {
@@ -990,6 +994,372 @@ const QUESTION_BANK = {
       question: "What is the OWASP Top 10?",
       answer: "The OWASP Top 10 is a standard awareness document representing the ten most critical security vulnerabilities found in modern web applications, updated regularly by security experts.",
       example: "Using the OWASP checklist to audit your app for security issues like injection, broken authentication, and security misconfigurations."
+    }
+  ],
+  ux_ui: [
+    {
+      id: 'ui1', difficulty: 'Basic',
+      question: "What is the difference between UI and UX?",
+      answer: "UI (User Interface) refers to the visual elements that users interact with, such as buttons, colors, typography, and layouts. UX (User Experience) is the overall feel and internal experience a user has as they interact with a product, focusing on usability, navigation, and solving user problems.",
+      example: "UI is the color, shape, and label of a button. UX is how easy it is to find that button and whether clicking it makes sense in the user's flow."
+    },
+    {
+      id: 'ui2', difficulty: 'Basic',
+      question: "What is 'Visual Hierarchy' and why is it important?",
+      answer: "Visual Hierarchy is the arrangement and presentation of design elements in order of their importance. It guides the user's eye to the most critical information first using size, color, contrast, spacing, and placement.",
+      example: "Making a blog post title large and bold (H1) while keeping the body text smaller and normal weight so readers know where to start reading."
+    },
+    {
+      id: 'ui3', difficulty: 'Basic',
+      question: "What is 'White Space' (Negative Space) and what is its purpose?",
+      answer: "White space is the empty space between design elements, like images, margins, columns, and text. Its purpose is to give the design breathing room, reduce clutter, improve readability, and draw focus to important elements.",
+      example: "Google's homepage uses a massive amount of white space around its single search bar to focus the user's entire attention on searching."
+    },
+    {
+      id: 'ui4', difficulty: 'Basic',
+      question: "What is the difference between Serif and Sans-serif fonts, and when should you use each?",
+      answer: "Serif fonts have decorative flares or tails (serifs) at the ends of their letter strokes, giving a traditional and formal look. Sans-serif fonts do not have these tails, presenting a clean, modern, and highly readable look on digital screens.",
+      example: "Times New Roman is a Serif font (good for newspapers/print). Inter and Roboto are Sans-serif fonts (excellent for web interfaces)."
+    },
+    {
+      id: 'ui5', difficulty: 'Basic',
+      question: "What is contrast ratio, and why is it important for accessibility?",
+      answer: "Contrast ratio is the difference in brightness between the text/foreground color and its background color. A high contrast ratio ensures that text is readable for everyone, including users with visual impairments or color blindness.",
+      example: "Using dark gray text on a white background (high contrast, easy to read) vs light gray text on a white background (low contrast, hard to read)."
+    },
+    {
+      id: 'ui6', difficulty: 'Basic',
+      question: "What is a 'Call to Action' (CTA) button, and what makes it effective?",
+      answer: "A CTA is an interactive element (usually a button) that directs the user to take a specific action, like signing up or buying. It is effective when it stands out visually (using contrasting colors), has clear/action-oriented text, and is placed logically in the user's reading path.",
+      example: "A bright teal button that says 'Get Started Free' standing out against a dark blue landing page header."
+    },
+    {
+      id: 'ui7', difficulty: 'Intermediate',
+      question: "What is a 'Design System' and why do product teams use them?",
+      answer: "A Design System is a collection of reusable components, guidelines, code snippets, and visual standards (like colors and typography) that serves as the single source of truth for a product's design. Teams use it to maintain design consistency across multiple platforms, speed up development, and simplify scaling.",
+      example: "Material Design by Google or Tailwind CSS configuration acting as a unified design guide for designers and engineers."
+    },
+    {
+      id: 'ui8', difficulty: 'Intermediate',
+      question: "What is 'Mobile-First Design' and why is it considered a best practice?",
+      answer: "Mobile-First Design is an approach where you design the layout for the smallest screens (mobile phones) first, and then scale up for larger screens (tablets, desktops). It is a best practice because it forces designers to prioritize content and features, ensuring a functional experience on constrained devices.",
+      example: "Designing a single-column layout for mobile with only essential buttons, then expanding it into a multi-column desktop layout."
+    },
+    {
+      id: 'ui9', difficulty: 'Intermediate',
+      question: "What is the difference between Wireframes, Mockups, and Prototypes?",
+      answer: "Wireframes are low-fidelity structural outlines (like blueprints) showing placement of elements. Mockups are high-fidelity, static designs showing colors, images, and typography. Prototypes are interactive mockups that simulate user interactions and page flows for testing.",
+      example: "Wireframe: A pencil sketch of a login box. Mockup: A Figma design of the login box with final branding. Prototype: A clickable design where typing in the login box redirects to the home screen."
+    },
+    {
+      id: 'ui10', difficulty: 'Intermediate',
+      question: "What is 'Fitts's Law' and how does it apply to UI design?",
+      answer: "Fitts's Law states that the time required to move to a target is a function of the target's size and distance. In UI design, it means critical buttons or menus should be large and placed in easily reachable screen areas to minimize user effort.",
+      example: "Placing primary action buttons at the bottom-center of mobile screens where users' thumbs naturally rest."
+    },
+    {
+      id: 'ui11', difficulty: 'Intermediate',
+      question: "What is the difference between SVGs (Vector) and PNGs/JPEGs (Raster), and when should you use each?",
+      answer: "SVGs are vector-based graphics created from mathematical paths, making them infinitely scalable without losing quality. PNGs and JPEGs are raster images made of pixels, which become blurry when scaled up. Use SVGs for icons and logos; use PNGs for transparent graphics, and JPEGs for photographs.",
+      example: "Using an SVG for a company logo so it looks crisp on 4K monitors, and a JPEG for user profile pictures."
+    },
+    {
+      id: 'ui12', difficulty: 'Intermediate',
+      question: "What is 'Information Architecture' (IA)?",
+      answer: "Information Architecture is the structural organization and labeling of content within an application or website. It helps users find information and complete tasks by grouping content logically and defining clear navigation menus.",
+      example: "Organizing an e-commerce site navigation into categories like 'Men', 'Women', 'Kids', and then subdividing them into 'Shoes', 'Shirts', and 'Accessories'."
+    },
+    {
+      id: 'ui13', difficulty: 'Intermediate',
+      question: "What is a 'User Persona' and how does it help in UX research?",
+      answer: "A User Persona is a semi-fictional profile of an ideal customer based on real data and user research. It helps the product team make design decisions by representing the needs, goals, behaviors, and pain points of real users.",
+      example: "Creating 'Dara, 22, student who works part-time' to help guide design decisions for a budget management app."
+    },
+    {
+      id: 'ui14', difficulty: 'Advanced',
+      question: "What is the 'Double Diamond' design process?",
+      answer: "The Double Diamond is a design framework divided into four phases: Discover (gather insights), Define (clarify the problem), Develop (create solutions), and Deliver (test and launch). It uses 'divergent thinking' (opening up ideas) followed by 'convergent thinking' (focusing on the best paths).",
+      example: "First researching all student habits (Discover), selecting the biggest issue (Define), brainstorming 10 UI concepts (Develop), and building/refining the best option (Deliver)."
+    },
+    {
+      id: 'ui15', difficulty: 'Advanced',
+      question: "Explain what 'Cognitive Load' is and how designers can reduce it.",
+      answer: "Cognitive Load is the amount of mental effort required by a user to complete a task using an interface. Designers can reduce it by simplifying layouts, using familiar design patterns, auto-filling inputs, and chunking information into step-by-step wizards.",
+      example: "Splitting a long, scary 20-field checkout form into 3 small, easy steps (Shipping -> Payment -> Review)."
+    },
+    {
+      id: 'ui16', difficulty: 'Advanced',
+      question: "What are the Web Content Accessibility Guidelines (WCAG) and its four core principles (POUR)?",
+      answer: "WCAG is a set of international standards for web accessibility. Its principles (POUR) stand for: 1. Perceivable (users must be able to see/hear content). 2. Operable (users can interact with keyboard/nav). 3. Understandable (text and layout make sense). 4. Robust (works with screen readers and modern tech).",
+      example: "Providing alternative text (alt text) for images (Perceivable) and allowing keyboard navigation using the Tab key (Operable)."
+    },
+    {
+      id: 'ui17', difficulty: 'Advanced',
+      question: "What is 'Gestalt Psychology' and how does it relate to UI design?",
+      answer: "Gestalt principles describe how the human brain naturally groups visual elements to make sense of the world. Key principles include Proximity (elements close to each other are related), Similarity (elements looking alike share functions), and Closure (brains fill in missing parts of shapes).",
+      example: "Grouping a label and its text input field closely together to show they are related (Proximity)."
+    },
+    {
+      id: 'ui18', difficulty: 'Advanced',
+      question: "What is a 'Dark Pattern' (Deceptive Design) in UX design?",
+      answer: "A Dark Pattern is an interface carefully crafted to trick users into doing things they might not want to do, like buying insurance, subscribing to a newsletter, or making it extremely difficult to delete an account.",
+      example: "Pre-checking an 'Add insurance to order' checkbox during ticket checkout, hoping the user doesn't notice."
+    },
+    {
+      id: 'ui19', difficulty: 'Intermediate',
+      question: "What is the difference between Responsive Design and Adaptive Design?",
+      answer: "Responsive Design uses CSS media queries and fluid grids to automatically reflow and scale a single layout smoothly to fit any screen size. Adaptive Design detects the user's screen size and loads a specific, pre-designed static layout tailored for that screen category.",
+      example: "A website stretching and compressing smoothly as you resize your desktop browser (Responsive) vs loading a completely separate mobile layout when visited from a phone (Adaptive)."
+    },
+    {
+      id: 'ui20', difficulty: 'Advanced',
+      question: "What is a 'Micro-interaction' and how does it enhance UX?",
+      answer: "A Micro-interaction is a subtle, small visual feedback loop triggered by a user action. It informs the user of a state change, guides them, and makes the application feel alive and responsive.",
+      example: "A button changing to a loading spinner when clicked, then showing a checkmark when the action is successful."
+    }
+  ],
+  qa: [
+    {
+      id: 'qa1', difficulty: 'Basic',
+      question: "What is the difference between Manual Testing and Automated Testing?",
+      answer: "Manual testing is the process of executing test cases by hand without scripts, mimicking real user actions to spot visual and logical bugs. Automated testing uses software tools to run scripts that verify code functionality automatically, which is faster and repeatable.",
+      example: "Manual: Personally clicking around to checkout an item. Automated: Running a Playwright script that logs in, adds an item, and checks out in 2 seconds."
+    },
+    {
+      id: 'qa2', difficulty: 'Basic',
+      question: "What is the difference between Black Box and White Box testing?",
+      answer: "Black Box testing checks the software's external functionality without knowing its internal code structure or logic. White Box testing inspects the internal code, branches, loops, and statement flows to verify coverage.",
+      example: "Black Box: Testing a login page by inputting email/password and verifying access. White Box: Examining the specific authentication function and database query code in the codebase."
+    },
+    {
+      id: 'qa3', difficulty: 'Basic',
+      question: "What is Regression Testing, and when is it executed?",
+      answer: "Regression testing is the process of testing an application after code changes, upgrades, or bug fixes to ensure that the existing functionality has not been broken or degraded.",
+      example: "Re-running a suite of billing tests after updating a database package to verify existing customers can still pay."
+    },
+    {
+      id: 'qa4', difficulty: 'Basic',
+      question: "What is the Bug Lifecycle? Explain its main stages.",
+      answer: "A bug lifecycle is the set of states a defect goes through from discovery to closure. Main stages: 1. New (bug found). 2. Assigned (given to developer). 3. Open/Active (dev working on it). 4. Fixed (code updated). 5. Retest (QA checks the fix). 6. Closed (resolved) or Reopened (fix failed).",
+      example: "QA reports a layout crash (New -> Assigned), developer resolves it (Fixed), QA confirms the screen loads correctly (Closed)."
+    },
+    {
+      id: 'qa5', difficulty: 'Basic',
+      question: "What is the difference between Bug Severity and Bug Priority?",
+      answer: "Severity is the technical impact of the bug on the system's operation (e.g., system crash is high severity). Priority is the business urgency to fix the bug (e.g., spelling error on the homepage header is low severity but high priority).",
+      example: "A crash on a page users rarely visit (High Severity, Low Priority). A misspelled company logo on the landing page (Low Severity, High Priority)."
+    },
+    {
+      id: 'qa6', difficulty: 'Basic',
+      question: "What is Sanity Testing vs Smoke Testing?",
+      answer: "Smoke testing is a broad test run of core features to verify if the build is stable enough for deeper testing. Sanity testing is a quick, focused test run performed after a minor bug fix to verify that specific feature works and didn't break adjacent modules.",
+      example: "Smoke: Verifying if the app boots, lets users log in, and displays the main dashboard. Sanity: Checking only the coupon discount field after a coupon bug is fixed."
+    },
+    {
+      id: 'qa7', difficulty: 'Intermediate',
+      question: "What is the difference between Functional and Non-Functional testing?",
+      answer: "Functional testing verifies what the system does (checking requirements, buttons, APIs, business logic). Non-functional testing verifies how the system behaves under load, stressing aspects like speed, scalability, security, and usability.",
+      example: "Functional: Ensuring checking out a cart works. Non-functional: Testing if the checkout page can handle 10,000 customers at the same time."
+    },
+    {
+      id: 'qa8', difficulty: 'Intermediate',
+      question: "Explain Boundary Value Analysis (BVA) and Equivalence Partitioning.",
+      answer: "Equivalence Partitioning divides input data into logical groups that behave similarly (testing one value from each group). BVA focuses on testing the edges (boundaries) of these groups, where bugs are most likely to occur.",
+      example: "For a password length input requiring 8 to 20 characters: Partition groups are <8, 8-20, >20. BVA values to test are 7, 8, 20, 21."
+    },
+    {
+      id: 'qa9', difficulty: 'Intermediate',
+      question: "What is the 'Testing Pyramid'?",
+      answer: "The Testing Pyramid is a conceptual model showing the distribution of test types. It suggests having a wide base of fast, cheap Unit Tests, a middle layer of Integration Tests, and a tiny top layer of slow, expensive End-to-End (UI) Tests.",
+      example: "An app having 1000 unit tests (functions), 100 integration tests (database/API calls), and 10 E2E tests (browser simulations)."
+    },
+    {
+      id: 'qa10', difficulty: 'Intermediate',
+      question: "What is the difference between Verification and Validation?",
+      answer: "Verification asks 'Are we building the product right?' (checks if code matches specifications through reviews, inspections, static analysis). Validation asks 'Are we building the right product?' (checks if the final product meets customer expectations through active testing).",
+      example: "Verification: Checking if the UI design matches the Figma file. Validation: Testing if real users find the checkout button easily."
+    },
+    {
+      id: 'qa11', difficulty: 'Intermediate',
+      question: "What is Integration Testing, and what are the Top-Down vs Bottom-Up approaches?",
+      answer: "Integration testing verifies that different software modules work together correctly. Top-Down tests higher-level modules first using dummy modules called 'Stubs'. Bottom-Up tests lower-level modules first using control scripts called 'Drivers'.",
+      example: "Top-Down: Testing UI navigation using fake database stubs. Bottom-Up: Testing database adapters first using driver scripts."
+    },
+    {
+      id: 'qa12', difficulty: 'Intermediate',
+      question: "What is Exploratory Testing, and when is it most useful?",
+      answer: "Exploratory testing is an unscripted, informal testing style where the QA tester simultaneously learns about the application, designs test cases, and executes them on the fly. It is useful in early dev stages, when time is short, or to find hidden edge cases.",
+      example: "Pretending to be a chaotic user who double-clicks buttons, backs out of pages, and inputs weird characters."
+    },
+    {
+      id: 'qa13', difficulty: 'Advanced',
+      question: "What is CI/CD (Continuous Integration / Continuous Deployment) and how does QA fit into it?",
+      answer: "CI/CD automates code integration and deployment. QA fits in by running automated test suites (unit, integration, regression) automatically inside the CI/CD pipeline whenever code is pushed. If a test fails, the build is blocked from deploying to production.",
+      example: "A GitHub Action running automated Cypress tests when a pull request is created, preventing bug-prone code from deploying."
+    },
+    {
+      id: 'qa14', difficulty: 'Advanced',
+      question: "What is Performance Testing? Define Load, Stress, and Endurance testing.",
+      answer: "Performance testing checks system speed and responsiveness. Load testing verifies how the system handles expected user traffic. Stress testing pushes the system past its limits to see where it breaks. Endurance testing checks stability over a long period under continuous load.",
+      example: "Load: 1,000 users shopping. Stress: Spiking to 50,000 users in 1 minute. Endurance: Running 500 users for 48 hours to find memory leaks."
+    },
+    {
+      id: 'qa15', difficulty: 'Advanced',
+      question: "What is Mutation Testing, and what is its purpose?",
+      answer: "Mutation testing evaluates the quality of test suites by injecting minor bugs (mutations) into the source code and running the tests. If the tests fail, the mutation is 'killed' (tests are good); if tests pass, the mutation 'survived' (tests missed the bug).",
+      example: "Changing a line `if (x > y)` to `if (x >= y)` in source code to check if your unit tests catch this change."
+    },
+    {
+      id: 'qa16', difficulty: 'Advanced',
+      question: "Compare Test-Driven Development (TDD) vs Behavior-Driven Development (BDD).",
+      answer: "TDD is developer-focused: you write a failing unit test, write code to pass it, and then refactor. BDD is collaboration-focused: you write human-readable user scenarios (e.g., Given/When/Then), and then implement code to satisfy those user stories.",
+      example: "TDD: Writing a test for `calculator.add()`. BDD: Writing 'Given the cart has items, When I click buy, Then receipt is generated'."
+    },
+    {
+      id: 'qa17', difficulty: 'Advanced',
+      question: "What is API testing and what are we looking for when testing an API?",
+      answer: "API testing verifies endpoints directly without the UI. We check HTTP status codes (e.g., 200 OK, 400 Bad Request), response JSON structures, data validation, response times, error handling, and authorization rules.",
+      example: "Sending a POST request to `/api/users` with missing data and verifying the API returns a `400` status with a descriptive validation error."
+    },
+    {
+      id: 'qa18', difficulty: 'Intermediate',
+      question: "What is User Acceptance Testing (UAT) and who performs it?",
+      answer: "UAT is the final phase of testing before software goes live. It is performed by the client, business users, or product owners to verify if the application works for real-world business scenarios.",
+      example: "A business client testing a new invoicing module to confirm it correctly computes regional tax forms before launch."
+    },
+    {
+      id: 'qa19', difficulty: 'Basic',
+      question: "What is a Test Case and what are its key components?",
+      answer: "A Test Case is a documented set of steps, inputs, and conditions designed to verify a specific software feature. Components include: Test Case ID, Description, Pre-conditions, Test Steps, Test Data, Expected Result, and Actual Result.",
+      example: "TC01: Verify login with valid credentials. Steps: Enter user, enter password, click submit. Expected: User redirects to dashboard."
+    },
+    {
+      id: 'qa20', difficulty: 'Advanced',
+      question: "What is a 'Flaky Test' and how do you handle or debug it?",
+      answer: "A flaky test is a test that passes and fails intermittently without any code changes. You debug it by isolating network latency (mocking APIs), removing timing issues (avoiding hardcoded wait times, using dynamic selectors), and checking for shared database pollution.",
+      example: "A test failing only when the remote server is slow. Fix: Using Cypress's `cy.intercept()` to mock the server response."
+    }
+  ],
+  dba: [
+    {
+      id: 'dba1', difficulty: 'Basic',
+      question: "What does a Database Administrator (DBA) do vs a Software Engineer?",
+      answer: "A Software Engineer focuses on database schema design, queries, and business logic. A DBA focuses on the infrastructure, installation, performance tuning (indexing, configuration), backups, disaster recovery, security policies, and uptime of database servers.",
+      example: "Engineer writes a query to fetch orders. DBA configures the connection pool, schedules nightly backups, and scales DB RAM."
+    },
+    {
+      id: 'dba2', difficulty: 'Basic',
+      question: "What is the difference between Full, Differential, and Incremental backups?",
+      answer: "Full backup copies the entire database. Differential backup copies all data changed since the last Full backup. Incremental backup copies data changed since the last backup of any type.",
+      example: "Full backup on Sunday. Monday Differential copies changes since Sunday. Monday Incremental copies changes since Sunday; Tuesday Incremental copies changes since Monday."
+    },
+    {
+      id: 'dba3', difficulty: 'Basic',
+      question: "What are RTO (Recovery Time Objective) and RPO (Recovery Point Objective)?",
+      answer: "RTO is the maximum targeted duration of database downtime before the system must be restored. RPO is the maximum age of data that can be lost in a failure, which determines backup frequency.",
+      example: "RTO of 2 hours means the DB must be back online within 2 hours of a crash. RPO of 24 hours means you can tolerate losing up to 24 hours of data."
+    },
+    {
+      id: 'dba4', difficulty: 'Basic',
+      question: "What is a Connection Pool, and why is it important?",
+      answer: "A Connection Pool is a cache of database connections kept open so they can be reused. It is important because opening a new database connection for every request is expensive and slows down response times.",
+      example: "Keeping 10 open phone lines to customers instead of dialing, connecting, and hanging up for every single question."
+    },
+    {
+      id: 'dba5', difficulty: 'Basic',
+      question: "What are the common database security threats and how can a DBA secure a database?",
+      answer: "Threats include unauthorized access, injection attacks, and data leaks. DBAs secure databases by encrypting data at rest/in transit, disabling default ports, enforcing strict IP white-listing, using role-based access, and auditing logs.",
+      example: "Only allowing server instances inside a private VPC subnet to connect to the database port, blocking the public internet."
+    },
+    {
+      id: 'dba6', difficulty: 'Intermediate',
+      question: "Explain Database Replication (Primary-Replica vs Multi-Primary).",
+      answer: "Primary-Replica (Master-Slave) replication copies data from a single write server to multiple read-only servers. Multi-Primary (Master-Master) replication allows data to be written and updated on multiple nodes simultaneously.",
+      example: "Primary-Replica: Users write comments on Master, and retrieve comments from Slaves to reduce database strain."
+    },
+    {
+      id: 'dba7', difficulty: 'Intermediate',
+      question: "What is 'Replication Lag' and what causes it?",
+      answer: "Replication Lag is the delay in time it takes for write operations on the primary node to be copied and applied to replica nodes. It is caused by high write loads, network latency, or slow hardware on replicas.",
+      example: "Writing a user profile, reloading the page, and not seeing the changes immediately because you read from a replica that hasn't synced."
+    },
+    {
+      id: 'dba8', difficulty: 'Intermediate',
+      question: "What is Point-in-Time Recovery (PITR) and how does it work?",
+      answer: "PITR lets a DBA restore a database to the exact state it was in at a specific second in the past. It works by restoring a base Full Backup and then replaying Write-Ahead Logs (WAL) or Transaction Logs up to the targeted timestamp.",
+      example: "An employee running DELETE FROM users without a WHERE clause at 10:15:05 AM. DBA restores the database to exactly 10:15:04 AM."
+    },
+    {
+      id: 'dba9', difficulty: 'Intermediate',
+      question: "How do you identify and optimize a slow query in a production database?",
+      answer: "Identify it by enabling the slow query log or using APM tools. Optimize it by running EXPLAIN ANALYZE on the query to see the execution plan, adding indexes, rewriting joins, or avoiding wildcard SELECTs.",
+      example: "Finding a query that does a full table scan of 10 million rows, and resolving it by adding an index on created_at column."
+    },
+    {
+      id: 'dba10', difficulty: 'Intermediate',
+      question: "What is the difference between Horizontal and Vertical partitioning?",
+      answer: "Horizontal partitioning (sharding) splits table rows across multiple tables/servers. Vertical partitioning splits table columns into separate tables to group frequently accessed data together.",
+      example: "Horizontal: Storing users with IDs 1-1M in Table A, and 1M-2M in Table B. Vertical: Moving massive blob biography columns to a separate table."
+    },
+    {
+      id: 'dba11', difficulty: 'Intermediate',
+      question: "What is the difference between Database Clustering and Database Sharding?",
+      answer: "Database Clustering groups multiple database servers to work together, sharing storage or replicating data for high availability. Sharding breaks data into distinct parts and stores them on completely separate servers that do not share data.",
+      example: "Clustering: Multiple nodes reading the same shared storage array. Sharding: Server A has US users, Server B has EU users."
+    },
+    {
+      id: 'dba12', difficulty: 'Advanced',
+      question: "What is a Database Deadlock, and how does the DBMS handle it?",
+      answer: "A Deadlock happens when Transaction A locks Row 1 and wants to write Row 2, while Transaction B locks Row 2 and wants to write Row 1. Neither can proceed. The DBMS handles it by detecting the cycle and aborting (rolling back) one of the transactions.",
+      example: "Two people trying to trade books, each refusing to hand their book over until they receive the other first."
+    },
+    {
+      id: 'dba13', difficulty: 'Advanced',
+      question: "What are relational database Isolation Levels?",
+      answer: "Isolation levels determine how transaction changes are visible to other transactions: 1. Read Uncommitted (allows dirty reads). 2. Read Committed (prevents dirty reads). 3. Repeatable Read (prevents non-repeatable reads). 4. Serializable (forces strict locking, slowest).",
+      example: "Serializable prevents double booking a seat in a movie theater by making bookings run strictly one-by-one."
+    },
+    {
+      id: 'dba14', difficulty: 'Advanced',
+      question: "What is Write-Ahead Logging (WAL) and why is it critical for database durability?",
+      answer: "WAL is a technique where database changes are written to a sequential log file on disk before they are applied to the database data files. It is critical because if a power loss occurs, the database can replay this log to recover transactions.",
+      example: "Jotting down an order on a notepad first, so you don't forget it if the kitchen loses power."
+    },
+    {
+      id: 'dba15', difficulty: 'Advanced',
+      question: "Explain what 'Vacuuming' (or autovacuum in PostgreSQL) is, and why it is necessary.",
+      answer: "In MVCC databases like PostgreSQL, updating or deleting rows does not immediately remove them from disk; it marks them as dead (bloat). Vacuuming cleans up these dead rows and reclaims disk space so the tables don't grow bloated.",
+      example: "Throwing away garbage in a bin to free up room, instead of just buying new trash cans forever."
+    },
+    {
+      id: 'dba16', difficulty: 'Advanced',
+      question: "How do you handle a database schema migration for a high-traffic system without causing downtime?",
+      answer: "Use a multi-step migration: 1. Add the new column (nullable or with default). 2. Update the application to write to both old and new columns. 3. Backfill old rows in batches. 4. Update the app to read from the new column. 5. Remove writes to the old column and drop it.",
+      example: "Building a new bridge next to the old bridge, routing traffic slowly to the new one, and then demolishing the old one."
+    },
+    {
+      id: 'dba17', difficulty: 'Intermediate',
+      question: "What is Index Fragmentation and how do you resolve it?",
+      answer: "Fragmentation occurs as data is inserted, updated, and deleted, causing the physical ordering of pages in the index B-Tree to scatter. It is resolved by rebuilding or reorganizing the index.",
+      example: "Re-arranging scattered library books back into alphabetical order after visitors put them back randomly."
+    },
+    {
+      id: 'dba18', difficulty: 'Intermediate',
+      question: "Explain the principle of least privilege in Database Administration.",
+      answer: "It is the security practice of giving users and application roles only the minimum levels of access (select, insert, update) necessary to perform their specific tasks, preventing malicious or accidental data modifications.",
+      example: "Giving the reporting tool only SELECT access to the sales tables, preventing it from deleting user records."
+    },
+    {
+      id: 'dba19', difficulty: 'Basic',
+      question: "What is the difference between scaling up (vertical) and scaling out (horizontal) for databases?",
+      answer: "Scaling up (vertical) means adding more hardware resources (CPU, RAM, SSD) to the existing database server. Scaling out (horizontal) means adding more servers to share the load through replication or sharding.",
+      example: "Vertical: Upgrading your single truck with a bigger engine. Horizontal: Adding 3 more trucks to your delivery fleet."
+    },
+    {
+      id: 'dba20', difficulty: 'Advanced',
+      question: "What is Multi-Version Concurrency Control (MVCC)?",
+      answer: "MVCC is a database optimization technique where each write operation creates a new version of the data instead of locking it. This allows read operations to run without blocking write operations, and vice versa.",
+      example: "Giving readers a snapshot photocopy of the book to read while a writer is updating the pages of the main manuscript."
     }
   ]
 };
