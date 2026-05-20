@@ -199,93 +199,93 @@ const QUESTION_BANK = {
   problem_solving: [
     {
       id: 'ps1', difficulty: 'Basic',
-      question: "How do you logically approach a brand new coding challenge?",
-      answer: "1. Thoroughly understand constraints and edge cases. 2. Write test inputs and outputs. 3. Draft pseudocode or logic flow. 4. Choose appropriate data structures. 5. Code incrementally. 6. Refactor and test.",
-      example: "Writing out step-by-step plain English steps on paper before writing a single line of function code."
+      question: "How would you handle a situation where you strongly disagree with a colleague on how to approach a technical problem?",
+      answer: "I would first listen to their perspective without interrupting, then clearly explain my reasoning using facts and data rather than emotions. If we still can't agree, I'd suggest we prototype both ideas or ask a senior team member for an objective opinion.",
+      example: "Organizing a short meeting to whiteboard both approaches and compare the pros and cons logically."
     },
     {
       id: 'ps2', difficulty: 'Intermediate',
-      question: "How do you optimize an algorithm that is running too slowly?",
-      answer: "Analyze performance using Big O complexity. Look for redundant loops (e.g. O(n²) loops to O(n) maps), eliminate duplicate computations via memoization, or use dynamic programming or hashing structures.",
-      example: "Replacing nested loop index matching with a lookup cache dictionary."
+      question: "Describe a time you were assigned a highly complex task that you didn't immediately know how to solve.",
+      answer: "I break the complex task down into smaller, manageable pieces. I research the unknowns, read documentation, and if I am stuck for more than a reasonable amount of time (e.g., an hour), I ask for guidance from a senior developer.",
+      example: "Creating a step-by-step checklist of smaller tasks and knocking them out one by one."
     },
     {
-      id: 'ps3', difficulty: 'Advanced',
-      question: "When is it better to write legible code over extremely optimized performance?",
-      answer: "When performance gains are negligible and complexity is high. Code is read and modified by humans far more than compiled. Unless on real-time embedded systems, micro-optimizations degrade team velocity and code safety.",
-      example: "Using a readable array filter method over a highly optimized but complex custom manual pointer manipulation script."
+      id: 'ps3', difficulty: 'Intermediate',
+      question: "What do you do if you realize you are going to miss a critical project deadline?",
+      answer: "I communicate the delay to my manager and stakeholders as early as possible. I explain the blockers, propose a revised timeline, and offer a solution, such as reducing the scope of the feature to meet the original deadline.",
+      example: "Sending a status update identifying the roadblock and providing two alternative options to move forward."
     },
     {
-      id: 'ps4', difficulty: 'Basic',
-      question: "How do you identify and handle edge cases when mapping out problem boundaries?",
-      answer: "Look for boundary minimums and maximums, unexpected empty/null collections, non-matching types, negative input numbers, and highly repeated identical values.",
-      example: "Handling a function input array with size 0, size 1, or containing duplicates."
+      id: 'ps4', difficulty: 'Advanced',
+      question: "How do you handle a situation where a colleague takes credit for your work or your idea?",
+      answer: "I would assume positive intent first—maybe it was an oversight. I would clarify my contribution in a group setting politely, or pull the colleague aside later to discuss how we can better share credit in the future.",
+      example: "Saying in a meeting, 'Adding to what John said about the architecture, when I designed that module, I also ensured it was scalable.'"
     },
     {
       id: 'ps5', difficulty: 'Intermediate',
-      question: "What is the 'Divide and Conquer' problem-solving pattern?",
-      answer: "It breaks a complex problem down recursively into two or more sub-problems of the same or related type, until these become simple enough to be solved directly, then combines those solutions.",
-      example: "The core logic behind Binary Search or Merge Sort algorithms."
+      question: "How would you approach a situation where a team member is consistently underperforming or missing their deadlines, affecting your work?",
+      answer: "I would first talk to them privately to see if they are facing any personal or technical blockers and offer help. If the issue persists and heavily impacts the project, I would objectively raise the concern with a manager.",
+      example: "Offering to pair-program with a colleague who seems to be struggling with a new framework."
     },
     {
-      id: 'ps6', difficulty: 'Advanced',
-      question: "How do you recognize if a problem should be solved using Dynamic Programming?",
-      answer: "Look for two characteristics: Overlapping Subproblems (solving the exact same sub-calculations multiple times) and Optimal Substructure (an optimal solution can be constructed from optimal solutions of its sub-problems).",
-      example: "Calculating paths through a grid matrix or finding the minimum coins needed for change."
+      id: 'ps6', difficulty: 'Intermediate',
+      question: "How do you handle a situation where you believe your manager's technical decision is wrong or harmful to the project?",
+      answer: "I would approach my manager privately and respectfully share my concerns. I would provide data or documentation to support my alternative solution. Ultimately, if they stick to their decision, I will fully support it and do my best to execute it.",
+      example: "Presenting a quick proof-of-concept to show why an alternative database structure might perform better."
     },
     {
-      id: 'ps7', difficulty: 'Intermediate',
-      question: "Explain the 'Two-Pointer' approach.",
-      answer: "It uses two indices reference points to scan through a dataset, typically moving towards each other or at different speeds in a single pass to optimize space.",
-      example: "Checking if a string is a palindrome by comparing left and right character pointers moving inward."
+      id: 'ps7', difficulty: 'Advanced',
+      question: "Describe a time when a project you were working on failed or faced a major setback. How did you handle it?",
+      answer: "I take ownership of my part in the failure without pointing fingers. I focus on conducting a post-mortem to analyze what went wrong, what we learned, and how to prevent it in the future.",
+      example: "Creating a blameless post-mortem document after a production crash to identify structural gaps in our deployment process."
     },
     {
       id: 'ps8', difficulty: 'Intermediate',
-      question: "What is the 'Sliding Window' technique, and when is it useful?",
-      answer: "It is used to convert nested loops into a single loop by tracking a window of elements in linear sequences, updating index bounds instead of recalculating overlapping slices.",
-      example: "Finding the maximum sum subarray of size K in an array."
+      question: "How do you navigate communication breakdowns across different departments (e.g., between engineering and design/marketing)?",
+      answer: "I proactively schedule a sync meeting to align both teams on the shared goal. I avoid technical jargon when speaking to non-technical teams and seek to understand their priorities and constraints.",
+      example: "Setting up a weekly 15-minute standup between frontend developers and UX designers to clarify UI expectations."
     },
     {
-      id: 'ps9', difficulty: 'Advanced',
-      question: "How do you debug a production bug where reproduction is difficult and debugger tools are disabled?",
-      answer: "Utilize telemetry, telemetry errors, detailed application tracing logs, server audits, synthetic request replication tests, and comparative environmental checks.",
-      example: "Analyzing error tracking stacks on platforms like Sentry or system logs on AWS CloudWatch."
+      id: 'ps9', difficulty: 'Basic',
+      question: "How do you handle receiving harsh or negative feedback during a code review or performance evaluation?",
+      answer: "I detach my ego from my work and treat the feedback as a learning opportunity. I ask clarifying questions if I don't understand the critique, and I implement the requested changes without taking it personally.",
+      example: "Thanking the reviewer for catching a memory leak and asking for a resource to learn more about the best practice."
     },
     {
-      id: 'ps10', difficulty: 'Basic',
-      question: "What is the concept of a Time-Space Complexity Trade-off?",
-      answer: "It refers to a design decision where you solve a problem either by consuming more memory to achieve lower execution time, or consuming less memory at the expense of computational speed.",
-      example: "Storing frequently queried calculation results in a hash lookup cache (uses RAM, saves CPU)."
+      id: 'ps10', difficulty: 'Intermediate',
+      question: "How do you proceed when the project requirements given to you are highly ambiguous or constantly changing?",
+      answer: "I pause development and schedule a meeting with stakeholders to clarify the goals. I write down the agreed-upon requirements, get sign-off, and suggest an Agile approach so changes can be managed in sprints.",
+      example: "Creating a written document outlining the exact features to be built and getting the product manager's approval."
     },
     {
-      id: 'ps11', difficulty: 'Advanced',
-      question: "How do you evaluate system scalability constraints when drafting algorithms?",
-      answer: "Consider worst-case inputs, maximum network memory latency, storage capacity limits, database index locks under heavy load, and concurrent thread usage capabilities.",
-      example: "Switching from sorting an entire dataset in-memory to using an external multi-way merge sort for gigabytes of user logs."
+      id: 'ps11', difficulty: 'Intermediate',
+      question: "How do you prioritize your work when you have multiple high-priority tasks due at the same time and limited resources?",
+      answer: "I use an urgency vs. importance matrix. I communicate with my manager to align on what delivers the most business value first. If everything is truly critical, I ask for help or see if deadlines can be negotiated.",
+      example: "Reaching out to a project manager to clarify which of the three 'urgent' bugs is affecting the most users."
     },
     {
-      id: 'ps12', difficulty: 'Intermediate',
-      question: "What is the main difference between Greedy algorithms and Dynamic Programming?",
-      answer: "Greedy algorithms make the locally optimal choice at each step hoping to find a global optimum. Dynamic Programming calculates all sub-paths to guarantee finding the overall best global solution.",
-      example: "Finding the shortest path on a map: Greedy chooses the immediate closest crossing; DP calculates all route steps."
+      id: 'ps12', difficulty: 'Advanced',
+      question: "What do you do when you are dependent on another team for a feature, but they are blocking your progress?",
+      answer: "I communicate the blocker early to my manager and the dependent team. While waiting, I mock the dependency so I can continue working on my part of the feature. I check in regularly without being confrontational.",
+      example: "Mocking an API response locally while waiting for the backend team to deploy the actual endpoint."
     },
     {
       id: 'ps13', difficulty: 'Advanced',
-      question: "What is Backtracking, and what is a classic problem that utilizes it?",
-      answer: "Backtracking is a systematic recursive algorithm for finding solutions to computational problems by trying candidates and abandoning them as soon as they cannot lead to a valid final solution.",
-      example: "Solving Sudoku puzzles or generating all valid parentheses combinations."
+      question: "How do you handle a toxic or uncooperative team member who disrupts the team's morale?",
+      answer: "I try to maintain a professional and empathetic relationship, focusing on the work. I set clear boundaries and document our interactions. If the behavior escalates and impacts project delivery, I escalate the issue to HR or management.",
+      example: "Keeping all project-related communication in public Slack channels or Jira tickets to ensure transparency."
     },
     {
-      id: 'ps14', difficulty: 'Basic',
-      question: "How do you verify the mathematical correctness of an algorithm before writing code?",
-      answer: "Run manual assertions using induction, dry-run small representative samples, check edge boundaries, and prove that each iteration step advances closer to termination.",
-      example: "Tracing a list-reverse algorithm manually using an array of 3 elements."
+      id: 'ps14', difficulty: 'Intermediate',
+      question: "How do you ensure knowledge transfer when a key member of the project team leaves abruptly?",
+      answer: "I quickly identify the most critical systems they managed. I arrange immediate handover sessions to document processes, credentials, and undocumented features. I ensure the rest of the team cross-trains on these areas.",
+      example: "Recording a screen-share session with the departing employee explaining the deployment pipeline."
     },
     {
-      id: 'ps15', difficulty: 'Intermediate',
-      question: "How do you proceed when requirements given for a feature are highly ambiguous?",
-      answer: "First state reasonable assumptions clearly, document the gaps, map out different viable approaches, design a simple pilot proof-of-concept, and validate choices directly with stakeholders.",
-      example: "Defining fallback behaviors for missing parameters in a system interface schema before starting backend development."
+      id: 'ps15', difficulty: 'Advanced',
+      question: "Describe a situation where you had to compromise on code quality to meet a tight business deadline. How did you manage it?",
+      answer: "I clearly communicate the trade-offs to stakeholders, explaining that we are taking on technical debt. I ensure the code is still functional and secure, but immediately create a Jira ticket to refactor the code in the next sprint.",
+      example: "Writing a quick script to bypass a slow data migration, but scheduling time next week to build a proper pipeline."
     }
   ],
   debugging: [
